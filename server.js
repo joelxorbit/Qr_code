@@ -21,7 +21,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Routes
 app.use('/', qrRoutes);
 
-// Start server
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
+// Start server only if not running on Vercel
+if (!process.env.VERCEL) {
+    app.listen(PORT, () => {
+        console.log(`Server is running on http://localhost:${PORT}`);
+    });
+}
+
+// Export app for Vercel serverless function
+module.exports = app;
