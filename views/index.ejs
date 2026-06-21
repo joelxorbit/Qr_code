@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free QR Code Generator - Create Custom QR Codes Instantly</title>
+    <meta name="description" content="Generate high-quality, permanent QR codes for free. The best QR code generator for URLs, text, email, phone, and WiFi with custom logos, colors, and frames.">
+    <meta name="keywords" content="qr code generator, qr code generator for free, custom qr code, create qr code, free qr code maker, permanent qr code">
+    <meta name="author" content="Joelx Orbit">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://joelxorbit.vercel.app/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://joelxorbit.vercel.app/">
+    <meta property="og:title" content="Free QR Code Generator - Create Custom QR Codes Instantly">
+    <meta property="og:description" content="Generate high-quality, permanent QR codes for free. The best QR code generator for URLs, text, email, phone, and WiFi.">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://joelxorbit.vercel.app/">
+    <meta property="twitter:title" content="Free QR Code Generator - Create Custom QR Codes Instantly">
+    <meta property="twitter:description" content="Generate high-quality, permanent QR codes for free. Customize colors, add logos, and frames.">
+    
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Premium QR Code Generator",
+      "url": "https://joelxorbit.vercel.app/",
+      "description": "Free tool to generate high-quality, custom QR codes with logos and frames.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Joelx Orbit"
+      }
+    }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/animations.css">
+</head>
+<body>
+    <!-- Background Animated Elements -->
+    <div class="bg-particles">
+        <div class="particle p1"></div>
+        <div class="particle p2"></div>
+        <div class="particle p3"></div>
+        <div class="particle p4"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header slide-in-top">
+        <div class="logo-container">
+            <div class="logo-icon">
+                <i class="fa-solid fa-qrcode"></i>
+            </div>
+            <h1 class="logo-text">Premium QR Generator</h1>
+        </div>
+        <nav class="nav-links">
+            <a href="#" class="nav-link active">Generate</a>
+            <a href="#history" class="nav-link">History</a>
+            <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container fade-in">
+        <section class="hero">
+            <h2 class="hero-title">Create <span>Permanent</span> QR Codes</h2>
+            <p class="hero-subtitle">High quality, fully customizable, and free forever.</p>
+        </section>
+
+        <div class="generator-layout">
+            <!-- Left Panel: Controls -->
+            <div class="card controls-card scale-up">
+                
+                <!-- Data Input Area -->
+                <div class="control-group">
+                    <label class="section-label">1. Enter Content</label>
+                    <div class="input-types">
+                        <button class="type-btn active" data-type="url"><i class="fa-solid fa-link"></i> URL</button>
+                        <button class="type-btn" data-type="text"><i class="fa-solid fa-align-left"></i> Text</button>
+                        <button class="type-btn" data-type="email"><i class="fa-solid fa-envelope"></i> Email</button>
+                        <button class="type-btn" data-type="phone"><i class="fa-solid fa-phone"></i> Phone</button>
+                        <button class="type-btn" data-type="wifi"><i class="fa-solid fa-wifi"></i> WiFi</button>
+                    </div>
+                    
+                    <!-- Dynamic Input Containers -->
+                    <div id="input-container-url" class="dynamic-input active">
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-globe input-icon"></i>
+                            <input type="url" id="qr-input-url" class="premium-input" placeholder="https://example.com" required>
+                        </div>
+                    </div>
+                    <div id="input-container-text" class="dynamic-input">
+                        <div class="input-wrapper">
+                            <textarea id="qr-input-text" class="premium-input" placeholder="Enter your text here..." rows="3"></textarea>
+                        </div>
+                    </div>
+                    <!-- (Other inputs would be similarly created and toggled via JS) -->
+                    <div id="input-container-email" class="dynamic-input">
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-at input-icon"></i>
+                            <input type="email" id="qr-input-email" class="premium-input" placeholder="someone@example.com">
+                        </div>
+                    </div>
+                    <div id="input-container-phone" class="dynamic-input">
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-phone input-icon"></i>
+                            <input type="tel" id="qr-input-phone" class="premium-input" placeholder="+1 234 567 8900">
+                        </div>
+                    </div>
+                    <div id="input-container-wifi" class="dynamic-input">
+                        <div class="input-wrapper mb-2">
+                            <i class="fa-solid fa-wifi input-icon"></i>
+                            <input type="text" id="qr-input-wifi-ssid" class="premium-input" placeholder="Network Name (SSID)">
+                        </div>
+                        <div class="input-wrapper mb-2">
+                            <i class="fa-solid fa-lock input-icon"></i>
+                            <input type="password" id="qr-input-wifi-pass" class="premium-input" placeholder="Password">
+                        </div>
+                        <div class="input-wrapper">
+                            <select id="qr-input-wifi-type" class="premium-select">
+                                <option value="WPA">WPA/WPA2</option>
+                                <option value="WEP">WEP</option>
+                                <option value="nopass">None</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Template Selection -->
+                <div class="control-group">
+                    <label class="section-label">2. Select Template</label>
+                    <div class="template-grid" id="template-selector">
+                        <!-- Populated via JS -->
+                    </div>
+                </div>
+
+                <!-- Customization -->
+                <div class="control-group">
+                    <label class="section-label">3. Customize (Optional)</label>
+                    <div class="customization-options">
+                        <div class="color-pickers" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <div class="picker-group">
+                                <label>QR Color</label>
+                                <input type="color" id="color-dark" value="#000000">
+                            </div>
+                            <div class="picker-group">
+                                <label>Frame Color</label>
+                                <input type="color" id="color-frame" value="#000000">
+                            </div>
+                            <div class="picker-group">
+                                <label>Background</label>
+                                <input type="color" id="color-light" value="#ffffff">
+                            </div>
+                        </div>
+                        <div class="slider-group">
+                            <label>Size: <span id="size-val">300</span>px</label>
+                            <input type="range" id="qr-size" min="200" max="1000" value="300" class="premium-slider">
+                        </div>
+                        <div class="select-group">
+                            <label>Error Correction</label>
+                            <select id="qr-error" class="premium-select">
+                                <option value="L">Low (7%)</option>
+                                <option value="M" selected>Medium (15%)</option>
+                                <option value="Q">Quartile (25%)</option>
+                                <option value="H">High (30%)</option>
+                            </select>
+                        </div>
+                        <div class="input-wrapper" style="margin-top: 1rem;">
+                            <label style="font-size: 0.85rem; color: var(--text-muted); display: block; margin-bottom: 0.5rem;">Add Center Logo (Optional)</label>
+                            <input type="file" id="qr-logo" class="premium-input" accept="image/png, image/jpeg, image/svg+xml" style="padding: 0.5rem;">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="action-buttons">
+                    <button id="btn-generate" class="btn btn-primary premium-hover">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Generate QR
+                    </button>
+                    <button id="btn-reset" class="btn btn-secondary">Reset</button>
+                </div>
+            </div>
+
+            <!-- Right Panel: Preview -->
+            <div class="card preview-card fade-in-right">
+                <h3 class="preview-title">Live Preview</h3>
+                <div class="preview-container">
+                    <div id="skeleton-loader" class="skeleton-loader active">
+                        <div class="skeleton-qr"></div>
+                    </div>
+                    <div id="qr-result" class="qr-result">
+                        <img id="qr-image" src="" alt="Generated QR Code" style="display: none;">
+                    </div>
+                </div>
+                
+                <div class="download-actions" id="download-actions">
+                    <button class="btn btn-success" id="btn-download-png">
+                        <i class="fa-solid fa-download"></i> Download PNG
+                    </button>
+                    <div class="secondary-downloads">
+                        <button class="btn btn-outline" id="btn-download-svg">SVG</button>
+                        <button class="btn btn-outline" id="btn-download-jpeg">JPEG</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- History Section -->
+        <section id="history" class="history-section mt-4">
+            <h3 class="section-label">Recent QR Codes</h3>
+            <div class="history-grid" id="history-grid">
+                <!-- History items injected by JS -->
+                <p class="empty-state">No recent QR codes found.</p>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section mt-4">
+            <h3 class="section-label" style="text-align: center; font-size: 1.5rem; margin-bottom: 2rem;">Why Choose Our Generator?</h3>
+            <div class="features-grid">
+                <div class="feature-card animated-feature">
+                    <div class="feature-icon"><i class="fa-solid fa-infinity"></i></div>
+                    <h4>Permanent Codes</h4>
+                    <p>Our QR codes never expire. They link directly to your content without intermediate redirects.</p>
+                </div>
+                <div class="feature-card animated-feature" style="animation-delay: 0.2s;">
+                    <div class="feature-icon"><i class="fa-solid fa-palette"></i></div>
+                    <h4>Fully Customizable</h4>
+                    <p>Change colors, add beautiful frames, and embed your own logo right in the center.</p>
+                </div>
+                <div class="feature-card animated-feature" style="animation-delay: 0.4s;">
+                    <div class="feature-icon"><i class="fa-solid fa-image"></i></div>
+                    <h4>High-Quality Export</h4>
+                    <p>Download crisp, high-resolution PNG, SVG, or JPEG files perfect for professional printing.</p>
+                </div>
+                <div class="feature-card animated-feature" style="animation-delay: 0.6s;">
+                    <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h4>100% Free & Secure</h4>
+                    <p>No hidden fees, no credit cards. All generation happens instantly and securely.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-socials">
+                <a href="#" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://wa.me/8838343971" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <div class="footer-contact">
+                <a href="mailto:joelxorbit@gmail.com"><i class="fa-solid fa-envelope"></i> joelxorbit@gmail.com</a>
+            </div>
+            <p>&copy; 2026 Copyright <a href="https://joelxorbit.vercel.app/" target="_blank" rel="noopener noreferrer">joelx orbit</a>. All rights reserved.</p>
+            <p class="footer-details">Premium, permanent QR codes with customizable designs.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+    <script src="/js/qrTemplates.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>
